@@ -1,0 +1,40 @@
+﻿@page "/operaciones"
+    <h3>Operaciones Matematicas</h3>
+
+<p>Primer Numero</p>
+<input @bind="PrimerNumero" @bind:event="oninput" />
+
+<p>SegundoNumero</p>
+<input @bind="SegundoNumero" @bind:event="oninput" />
+
+<p>La suma arroja un resultado de: @Suma</p>
+<p>La Resta arroja un resultado de: @Resta</p>
+<p>La Multiplicacion arroja un resultado de: @Multiplicacion</p>
+
+<button class="btn btn-primary" @onclick="Calcular">Calcular</button>
+
+@code {
+    private float PrimerNumero, SegundoNumero, Suma, Resta, Multiplicacion;
+
+    private void Calcular()
+    {
+        Sumar();
+        Restar();
+        Multiplicar();
+    }
+
+    private void Sumar()
+    {
+        Suma = PrimerNumero + SegundoNumero;
+    }
+
+    private void Restar()
+    {
+        Resta = PrimerNumero - SegundoNumero;
+    }
+
+    private void Multiplicar()
+    {
+        Multiplicacion = PrimerNumero * SegundoNumero;
+    }
+}
